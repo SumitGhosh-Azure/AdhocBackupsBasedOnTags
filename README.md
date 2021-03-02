@@ -16,9 +16,13 @@ Please consider the following before execution of the script:
 •	The script has two Parameters as mandatory: $TAGS and $NumberOfDaysForRetention
 TAGS: Please give the TAG name attached to the critical VM’s. The script will traverse through the subscription for all the VM’s with this TAG and trigger a manual backup for them.
 NumberOfDaysForRetention: Please input the number of days to retain the recovery point created by this trigger.
+
 •	When you deploy an Automation account, make sure you create a RunAsAccount along with it, so that scripts don’t need authentication while running.
+
 •	This script is small but compute intensive. If the customer has more than 100 servers under his subscription, please use Azure Hybrid worker instead of Azure Automation accounts using Sandbox.
+
 •	Make sure Hybrid worker has “Az” Modules.
+
 •	Run as Account, Certificates should be exported to the Hybrid worked roles using the Export Cert script. Please run this script from Automation account, selecting Hybrid worker groups you plan to run the backup scripts from.
 
 Here are some links which may help you in configuring the environment to run these scripts:
